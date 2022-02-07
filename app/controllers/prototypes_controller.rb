@@ -35,7 +35,6 @@ class PrototypesController < ApplicationController
       redirect_to root_path(@prototype)
     else
       render :edit
-      @prototype = @user.prototype.includes(:user)
     end
   end
 
