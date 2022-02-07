@@ -22,7 +22,6 @@ class PrototypesController < ApplicationController
       redirect_to root_path(@prototype)
     else
       render :new
-      @prototype = Prototype.includes(:user)
     end
   end
 
@@ -32,7 +31,7 @@ class PrototypesController < ApplicationController
 
   def update
     if @prototype.update(prototype_params)
-      redirect_to root_path(@prototype)
+      redirect_to prototype_path(@prototype)
     else
       render :edit
     end
